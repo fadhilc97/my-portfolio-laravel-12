@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{{-- Color reference: https://colorhunt.co/palette/222831393e46948979dfd0b8 --}}
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,8 +16,7 @@
   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
-  <x-landing.navbar />
+<body class="bg-primary text-quatenary">
   {{ $slot }}
 </body>
 
