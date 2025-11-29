@@ -1,4 +1,5 @@
-<aside x-show="isOpenHamburger" class="w-full absolute right-0 bg-primary md:static md:w-1/5 space-y-16 md:block">
+<aside x-bind:class="!isOpenHamburger ? 'hidden' : ''"
+  class="w-full absolute right-0 bg-primary md:static md:w-1/5 space-y-16 md:block">
   <nav class="px-3 md:block flex justify-between items-center">
     <ul class="flex justify-start md:justify-end gap-4 items-center">
       <x-landing.nav-link-socmed-item href="mailto:fadhilc97@gmail.com" icon-src="/img/icons/envelope.svg" alt="Email Icon"
