@@ -1,5 +1,5 @@
 <div class="w-full md:w-4/5 font-stack-sans-notch text-center md:text-left relative">
-  <button wire:click="toggleHamburger(true)" type="button" class="absolute md:hidden right-0 cursor-pointer">
+  <button x-on:click="isOpenHamburger = true" type="button" class="absolute md:hidden right-0 cursor-pointer">
     <img src="{{ asset('/img/icons/bars.svg') }}" alt="Bars Icon" width="32" />
   </button>
   <h1>Fadhil</h1>
