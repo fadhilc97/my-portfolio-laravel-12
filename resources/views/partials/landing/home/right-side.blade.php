@@ -16,10 +16,10 @@
   </nav>
   <nav class="text-2xl">
     <ul>
-      <x-landing.nav-link-item href="#" label="Home" />
-      <x-landing.nav-link-item href="#" label="Experience" />
-      <x-landing.nav-link-item href="#" label="Project" />
-      <x-landing.nav-link-item href="#" label="Blog" />
+      <x-landing.nav-link-item href="/" label="Home" />
+      <x-landing.nav-link-item href="/experiences" label="Experience" />
+      <x-landing.nav-link-item href="/projects" label="Project" />
+      <x-landing.nav-link-item href="/posts" label="Blog" />
     </ul>
   </nav>
 </aside>
