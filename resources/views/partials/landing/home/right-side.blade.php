@@ -16,7 +16,6 @@
   </nav>
   <nav class="text-2xl">
     <ul>
-      <x-landing.nav-link-item href="/" label="Home" />
       <x-landing.nav-link-item href="/experience" label="Experience" />
       <x-landing.nav-link-item href="/project" label="Project" />
       <x-landing.nav-link-item href="/blog" label="Blog" />
