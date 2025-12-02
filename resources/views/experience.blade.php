@@ -6,7 +6,7 @@
     <h2>My Career Journey</h2>
   </div>
 
-  <div class="flex flex-col divide-y md:divide-x md:divide-y-0 divide-quatenary/70 md:flex-row mt-4">
+  <div class="flex flex-col md:flex-row mt-4">
     @include('partials.landing.experience.description')
     @include('partials.landing.experience.timeline')
   </div>

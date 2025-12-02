@@ -10,6 +10,6 @@ class Experience extends Component
 {
     public function render()
     {
-        return view('experience');
+      return view('experience');
     }
 }
