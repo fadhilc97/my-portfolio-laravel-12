@@ -78,7 +78,7 @@
   ];
 @endphp
 
-<div class="space-y-8 w-full md:w-1/2 px-4 h-auto md:h-[80vh] md:overflow-auto mt-8 md:mt-auto">
+<div class="space-y-8 w-full md:w-1/2 px-4 pb-16 h-auto md:h-[80vh] md:overflow-auto mt-8 md:mt-auto">
   @foreach ($jobs as $job)
     <div class="pl-4 relative border-l space-y-4 border-l-quatenary py-4">
       <div class="w-3 h-3 absolute top-0 left-0 -translate-x-1/2 rounded-full bg-quatenary"></div>
