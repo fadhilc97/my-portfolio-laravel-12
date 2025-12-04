@@ -1,16 +1,18 @@
 <?php
 
-use App\Livewire\Landing\Experience;
-use App\Livewire\Landing\Home;
-use App\Livewire\Settings\Appearance;
-use App\Livewire\Settings\Password;
-use App\Livewire\Settings\Profile;
-use App\Livewire\Settings\TwoFactor;
-use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
+use App\Livewire\Landing\Home;
+use App\Livewire\Landing\Project;
+use App\Livewire\Landing\Experience;
+use App\Livewire\Settings\Profile;
+use App\Livewire\Settings\Password;
+use App\Livewire\Settings\TwoFactor;
+use App\Livewire\Settings\Appearance;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class);
 Route::get('/experience', Experience::class);
+Route::get('/project', Project::class);
 
 Route::get('/blog', function() {
   return view ('blog');
