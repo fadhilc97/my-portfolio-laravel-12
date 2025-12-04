@@ -1,4 +1,4 @@
-<div class="relative h-screen p-[1.6rem] overflow-hidden">
+<div class="relative h-auto md:h-screen p-[1.6rem] overflow-hidden">
   <x-landing.nav-control prev-href="" next-href="/project" />
 
   <div class="font-stack-sans-notch text-center md:text-left">
