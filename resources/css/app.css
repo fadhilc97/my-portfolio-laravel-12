@@ -87,6 +87,12 @@ select:focus[data-flux-control] {
     @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
 }
 
+@layer components {
+    .slide-transition {
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
