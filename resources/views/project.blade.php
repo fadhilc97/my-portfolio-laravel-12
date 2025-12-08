@@ -34,19 +34,22 @@
         imgPath: 'img/projects/daily-savings.png',
         title: 'Daily Savings',
         description: 'Recording and summarize my savings in daily basis.',
-        techStacks: ['TypeScript', 'Next.js', 'Tailwind CSS', 'PostgreSQL', 'Prisma.js', 'Recharts']
+        techStacks: ['TypeScript', 'Next.js', 'Tailwind CSS', 'PostgreSQL', 'Prisma.js', 'Recharts'],
+        link: 'https://www.linkedin.com/feed/update/urn:li:activity:7226029158135386112/'
       }, {
         id: 2,
         imgPath: 'img/projects/technical-docs.png',
         title: 'Technical Docs',
         description: 'Simple technical documentation about JavaScript Fundamentals.',
-        techStacks: ['HTML', 'CSS']
+        techStacks: ['HTML', 'CSS'],
+        link: 'https://fadhilc97.github.io/fcc-technical-documentation/'
       }, {
         id: 3,
         imgPath: 'img/projects/valorant-info.png',
         title: 'Valorant Info - Asia Pacific 2022',
         description: 'Introduction about game Valorant in general and tournament information in Asia Pacific 2022. This site is written in Bahasa Indonesia.',
-        techStacks: ['HTML', 'CSS', 'JavaScript']
+        techStacks: ['HTML', 'CSS', 'JavaScript'],
+        link: 'https://fadhilc97.github.io/valorant-info/'
       }]
     }
   }
@@ -55,11 +58,11 @@
 <div x-data="getData()" x-cloak class="relative h-auto lg:h-screen p-[1.6rem] overflow-hidden">
   <x-landing.nav-control prev-href="/experience" next-href="/blog" />
 
-  <div class="grid grid-cols-1 lg:grid-cols-2 h-[30vh]">
+  <div class="grid grid-cols-1 lg:grid-cols-2 lg:h-[30vh]">
     <div class="font-stack-sans-notch text-center lg:text-left">
       <h1>Projects</h1>
       <h2>My Showcase</h2>
-      <div class="pb-4 lg:pr-4 lg:pb-0 mt-4">
+      <div class="pb-4 lg:pr-8 lg:pb-0 mt-4">
         <p class="font-inter leading-8 text-xl text-quatenary/70">
           The proven projects. By endless curiosity, I explore several tech stacks to make something more than just a
           system. Understanding the problems, ideas gathering, analyze deeply, and make it resolvable.
@@ -67,21 +70,26 @@
       </div>
     </div>
 
-    <div class="py-8 lg:py-16 lg:px-28">
+    <div class="py-8 lg:py-16 lg:px-20">
       <h3 class="text-quatenary font-medium text-center" x-text="projects[currentSlide].title"></h3>
       <p class="text-quatenary/90 text-center mt-4 text-sm" x-text="projects[currentSlide].description"></p>
       <p class="text-quatenary/70 text-center text-sm mt-1">Tech stacks: <span
           x-text="projects[currentSlide].techStacks.join(', ')"></span></p>
+      <div class="flex justify-center mt-4">
+        <a :href="projects[currentSlide].link" target="_blank"
+          class="border rounded-lg px-4 py-2 text-sm text-center border-quatenary/80 hover:bg-quatenary hover:text-primary font-medium transition duration-300">Link
+          Demo</a>
+      </div>
     </div>
   </div>
 
-  <div class="flex lg:flex-col flex-col-reverse gap-4 pb-16 mt-4">
-    <div class="w-1/2 mx-auto h-[360px] overflow-hidden flex border rounded-md p-4 border-quatenary">
+  <div class="flex lg:flex-col flex-col-reverse gap-4 pb-16 mt-12">
+    <div class="w-full lg:w-1/2 mx-auto h-[360px] overflow-hidden flex border rounded-md py-4 border-quatenary">
       <template x-for="(project, index) in projects" :key="project.id">
         <div
           class="slide-transition w-full flex-shrink-0 text-white flex justify-center text-3xl h-auto overflow-hidden"
           :style="`transform: translateX(-${currentSlide * 100}%)`">
-          <img :src="assetBase + project.imgPath" :alt="project.title" />
+          <img :src="assetBase + project.imgPath" :alt="project.title" class="object-cover" />
         </div>
       </template>
     </div>
