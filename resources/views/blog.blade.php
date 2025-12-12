@@ -16,7 +16,7 @@
     </aside>
     <section class="col-span-2 divide-y divide-primary/20">
       @for ($i = 0; $i < 10; $i++)
-        <div class="py-8 px-4 cursor-pointer hover:bg-primary/10">
+        <a href="/blog/testing" class="block py-8 px-4 cursor-pointer hover:bg-primary/10">
           <div class="flex gap-4 items-center">
             <img src="{{ asset('img/profile.jpg') }}" alt="Post title" class="h-28 object-cover w-28 rounded-md">
             <article class="space-y-4 py-2">
@@ -35,7 +35,7 @@
           <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nihil quas deserunt
             pariatur minima
             assumenda, ducimus adipisci sint laudantium error.</p>
-        </div>
+        </a>
       @endfor
     </section>
   </div>
