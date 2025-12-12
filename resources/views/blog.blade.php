@@ -17,9 +17,9 @@
     <section class="col-span-2 divide-y divide-primary/20">
       @for ($i = 0; $i < 10; $i++)
         <div class="py-8 px-4 cursor-pointer hover:bg-primary/10">
-          <div class="flex gap-4">
-            <img src="{{ asset('img/profile.jpg') }}" alt="Post title" class="object-cover w-28 rounded-md">
-            <article class="space-y-4 pb-2">
+          <div class="flex gap-4 items-center">
+            <img src="{{ asset('img/profile.jpg') }}" alt="Post title" class="h-28 object-cover w-28 rounded-md">
+            <article class="space-y-4 py-2">
               <div class="flex items-center gap-4">
                 <div class="tracking-wider">Category 1</div>
                 <div class="w-30 h-[1px] bg-primary/50"></div>
@@ -27,10 +27,8 @@
               </div>
               <h2 class="font-semibold">
                 {{ Str::of(
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, autem esse
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                libero
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                fuga quaerat laborum? lorem30',
-                )->limit(100) }}
+                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, autem esse libero fuga quaerat laborum?',
+                )->limit(50) }}
               </h2>
             </article>
           </div>
