@@ -1,6 +1,7 @@
 <?php
 
 use Laravel\Fortify\Features;
+use App\Livewire\Landing\Blog;
 use App\Livewire\Landing\Project;
 use App\Livewire\Settings\Profile;
 use App\Livewire\Settings\Password;
@@ -16,9 +17,7 @@ Route::get('/experience', function() {
 });
 Route::get('/project', Project::class);
 
-Route::get('/blog', function() {
-  return view ('blog');
-});
+Route::get('/blog', Blog::class);
 
 Route::view('dashboard', 'dashboard')
   ->middleware(['auth', 'verified'])
