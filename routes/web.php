@@ -16,8 +16,10 @@ Route::get('/experience', function() {
   return view('experience');
 });
 Route::get('/project', Project::class);
-
 Route::get('/blog', Blog::class);
+Route::get('/blog/{slug}', function() {
+  return view('blog-detail');
+});
 
 Route::view('dashboard', 'dashboard')
   ->middleware(['auth', 'verified'])
