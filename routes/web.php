@@ -10,6 +10,7 @@ use App\Livewire\Settings\Appearance;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\BlogPost\Blog as AppBlog;
 use App\Livewire\BlogPost\Category;
+use App\Livewire\BlogPost\CreateBlog;
 
 Route::get('/', function() {
   return view ('home');
@@ -29,6 +30,7 @@ Route::view('dashboard', 'dashboard')
 
 Route::middleware(['auth'])->group(function () {
   Route::get('app/blog', AppBlog::class)->name('app.blog');
+  Route::get('app/blog/create', CreateBlog::class)->name('app.blog.create');
   Route::get('app/categories', Category::class)->name('app.categories');
 
   Route::redirect('settings', 'settings/profile');

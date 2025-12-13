@@ -1,6 +1,6 @@
 <div class="space-y-8">
   <h2>Blog Posts</h2>
-  <flux:button variant="primary" class="cursor-pointer">Create new post</flux:button>
+  <flux:button wire:navigate href="/app/blog/create" variant="primary">Create new post</flux:button>
   <div class="relative overflow-x-auto bg-neutral-primary-soft rounded-base border border-default">
     <table class="w-full text-sm text-left rtl:text-right text-body">
       <thead class="text-sm text-body bg-neutral-secondary-medium border-b border-default-medium">
