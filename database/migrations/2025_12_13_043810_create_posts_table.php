@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('likes')->default(0);
             $table->enum('status', ['draft', 'published', 'archived'])->default('draft');
             $table->foreignId('user_id')->constrained('users', indexName:'post_author_id');
-            $table->foreignId('category_id')->constrained('categories', indexName:'post_category_id');
+            $table->foreignId('category_id')->nullable()->constrained('categories', indexName:'post_category_id')->nullOnDelete();
             $table->timestamps();
         });
     }
