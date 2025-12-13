@@ -8,6 +8,8 @@ use App\Livewire\Settings\Password;
 use App\Livewire\Settings\TwoFactor;
 use App\Livewire\Settings\Appearance;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\BlogPost\Blog as AppBlog;
+use App\Livewire\BlogPost\Category;
 
 Route::get('/', function() {
   return view ('home');
@@ -26,6 +28,9 @@ Route::view('dashboard', 'dashboard')
   ->name('dashboard');
 
 Route::middleware(['auth'])->group(function () {
+  Route::get('app/blog', AppBlog::class)->name('app.blog');
+  Route::get('app/categories', Category::class)->name('app.categories');
+
   Route::redirect('settings', 'settings/profile');
 
   Route::get('settings/profile', Profile::class)->name('profile.edit');
