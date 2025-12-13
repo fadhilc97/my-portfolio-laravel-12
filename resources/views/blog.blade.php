@@ -1,9 +1,9 @@
-<div class="py-16 px-32">
-  <div class="space-y-2 font-stack-sans-notch">
+<div class="py-16 px-16 md:px-32">
+  <div class="space-y-2 font-stack-sans-notch text-center md:text-left">
     <h1>Blog page</h1>
     <h3>Pouring out my thoughts into series of words</h3>
   </div>
-  <div class="grid grid-cols-3 mt-16 gap-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 mt-16 gap-4">
     <aside class="space-y-4">
       <h4 class="font-medium">Category Filters:</h4>
       <ul>
@@ -14,9 +14,9 @@
         </li>
       </ul>
     </aside>
-    <section class="col-span-2 divide-y divide-primary/20">
+    <section class="md:col-span-2 divide-y divide-primary/20">
       @for ($i = 0; $i < 10; $i++)
-        <a href="/blog/testing" class="block py-8 px-4 cursor-pointer hover:bg-primary/10">
+        <a href="/blog/testing" class="block py-8 px-2 md:px-4 cursor-pointer hover:bg-primary/10">
           <div class="flex gap-4 items-center">
             <img src="{{ asset('img/profile.jpg') }}" alt="Post title" class="h-28 object-cover w-28 rounded-md">
             <article class="space-y-4 py-2">
