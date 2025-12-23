@@ -13,7 +13,7 @@
               </button>
             </div>
           </th>
-          <th scope="col" class="px-6 py-3 font-medium">
+          <th scope="col" class="px-6 py-3 font-medium w-1/5">
             <div class="flex items-center">
               Title
               <button type="button">
@@ -59,30 +59,34 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="bg-neutral-primary-soft border-b  border-default">
-          <td class="px-6 py-4">
-            13 Dec 2025
-          </td>
-          <td class="px-6 py-4">
-            Blog Title
-          </td>
-          <td class="px-6 py-4">
-            Category 1
-          </td>
-          <td class="px-6 py-4">
-            Fadhil
-          </td>
-          <td class="px-6 py-4">
-            100
-          </td>
-          <td class="px-6 py-4">
-            Draft
-          </td>
-          <td class="px-6 py-4 text-primary/50">
-            <a href="#" class="font-medium text-sky-600 hover:underline">Edit</a> |
-            <a href="#" class="font-medium text-yellow-600 hover:underline">Preview</a>
-          </td>
-        </tr>
+        @forelse ($posts as $post)
+          <tr wire:key="{{ $post->id }}" class="bg-neutral-primary-soft border-b  border-default">
+            <td class="px-6 py-4">
+              {{ $post->created_at->format('d M Y') }}
+            </td>
+            <td class="px-6 py-4">
+              {{ $post->title }}
+            </td>
+            <td class="px-6 py-4">
+              {{ $post->category->name }}
+            </td>
+            <td class="px-6 py-4">
+              {{ $post->author->name }}
+            </td>
+            <td class="px-6 py-4">
+              {{ $post->likes }}
+            </td>
+            <td class="px-6 py-4 capitalize">
+              {{ $post->status }}
+            </td>
+            <td class="px-6 py-4 text-primary/50">
+              <a href="#" class="font-medium text-sky-600 hover:underline">Edit</a> |
+              <a href="#" class="font-medium text-yellow-600 hover:underline">Preview</a>
+            </td>
+          </tr>
+        @empty
+          <x-table-row-empty colspan="7" />
+        @endforelse
       </tbody>
     </table>
   </div>

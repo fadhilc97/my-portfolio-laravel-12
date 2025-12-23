@@ -72,11 +72,7 @@
             </td>
           </tr>
         @empty
-          <tr class="bg-neutral-primary-soft border-b  border-default">
-            <td colspan="3" class="px-6 py-4 text-center">
-              Data empty
-            </td>
-          </tr>
+          <x-table-row-empty colspan="3" />
         @endforelse
       </tbody>
     </table>
