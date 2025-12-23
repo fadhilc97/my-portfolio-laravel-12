@@ -25,7 +25,7 @@ class CreateBlog extends Component
   public function handleCreate() {
     $validated = $this->validate();
     $validated['slug'] = Str::slug($validated['title']);
-    $validated['user_id'] = Auth::user()->id;
+    $validated['author_id'] = Auth::user()->id;
     
     Post::create($validated);
 
