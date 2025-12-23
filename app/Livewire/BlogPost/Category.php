@@ -20,7 +20,7 @@ class Category extends Component
 
   #[Computed()]
   public function categories() {
-    return ModelsCategory::paginate(10);
+    return ModelsCategory::with('posts')->paginate(10);
   }
 
   public function handleCreate() {

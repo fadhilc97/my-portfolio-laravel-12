@@ -54,7 +54,7 @@
               </flux:field>
             </td>
             <td class="px-6 py-4">
-              0
+              {{ $category->posts->count() }}
             </td>
             <td class="px-6 py-4 text-primary/50">
               <button
