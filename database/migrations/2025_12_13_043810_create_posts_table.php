@@ -21,6 +21,7 @@ return new class extends Migration
             $table->enum('status', ['draft', 'published', 'archived'])->default('draft');
             $table->foreignId('author_id')->constrained('users', indexName:'post_author_id');
             $table->foreignId('category_id')->nullable()->constrained('categories', indexName:'post_category_id')->nullOnDelete();
+            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }
