@@ -59,7 +59,7 @@
         </tr>
       </thead>
       <tbody>
-        @forelse ($posts as $post)
+        @forelse ($this->posts as $post)
           <tr wire:key="{{ $post->id }}" class="bg-neutral-primary-soft border-b  border-default">
             <td class="px-6 py-4">
               {{ $post->created_at->format('d M Y') }}
@@ -68,10 +68,10 @@
               {{ $post->title }}
             </td>
             <td class="px-6 py-4">
-              {{ $post->category->name }}
+              {{ $post->category }}
             </td>
             <td class="px-6 py-4">
-              {{ $post->author->name }}
+              {{ $post->author }}
             </td>
             <td class="px-6 py-4">
               {{ $post->likes }}
