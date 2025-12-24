@@ -1,12 +1,11 @@
 <div x-data="{ currentSlugEdit: null }" class="space-y-8">
   <h2>Categories</h2>
-  <form x-show="!currentSlugEdit" wire:submit.prevent="handleCreate" class="flex items-center gap-2">
+  <form x-show="!currentSlugEdit" wire:submit="handleCreate" class="flex items-center gap-2">
     <flux:field>
       <flux:input wire:model="name" placeholder="Category Name" type="text" />
       <flux:error name="name" />
     </flux:field>
-    <flux:button x-bind:disabled="currentSlugEdit" x-bind:type="currentSlugEdit ? 'submit' : 'button'" variant="primary"
-      class="cursor-pointer">Create new
+    <flux:button x-bind:disabled="currentSlugEdit" type="submit" variant="primary" class="cursor-pointer">Create new
       category</flux:button>
   </form>
   <h3 x-show="currentSlugEdit">Edit Category</h3>
