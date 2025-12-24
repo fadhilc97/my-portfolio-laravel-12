@@ -2,6 +2,7 @@
 
 namespace App\Livewire\BlogPost;
 
+use App\Data\CategoryData;
 use App\Models\Category as ModelsCategory;
 use Illuminate\Support\Str;
 use Livewire\Attributes\Computed;
@@ -20,7 +21,9 @@ class Category extends Component
 
   #[Computed()]
   public function categories() {
-    return ModelsCategory::with('posts')->paginate(10);
+    return CategoryData::collect(
+      ModelsCategory::orderBy('name')->with('posts')->paginate(10)
+    );
   }
 
   public function handleCreate() {
