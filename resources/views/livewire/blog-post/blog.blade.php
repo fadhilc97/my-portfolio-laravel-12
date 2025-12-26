@@ -80,7 +80,7 @@
               {{ $post->status }}
             </td>
             <td class="px-6 py-4 text-primary/50">
-              <a href="#" class="font-medium text-sky-600 hover:underline">Edit</a> |
+              <a href="/app/blog/{{ $post->slug }}/edit" class="font-medium text-sky-600 hover:underline">Edit</a> |
               <a href="#" class="font-medium text-yellow-600 hover:underline">Preview</a>
             </td>
           </tr>
