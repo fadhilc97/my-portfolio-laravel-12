@@ -45,6 +45,26 @@
     </flux:field>
     <div class="flex gap-1">
       <flux:button type="submit" variant="primary" class="cursor-pointer">Save</flux:button>
+
+      @switch($this->status)
+        @case('draft')
+          <flux:button type="button" variant="primary" class="cursor-pointer" wire:click="handlePublish" color="orange">
+            Publish
+          </flux:button>
+        @break
+
+        @case('published')
+          <flux:button type="button" variant="primary" class="cursor-pointer" wire:click="handleArchive" color="red"
+            wire:confirm="Are you sure want to archive this post ?">Archive
+          </flux:button>
+        @break
+
+        @default
+      @endswitch
+      <flux:button href="/app/blog/{{ $this->slug }}/preview" variant="outline" icon:trailing="arrow-up-right"
+        class="text-yellow-600" target="_blank">
+        Preview
+      </flux:button>
       <flux:button href="/app/blog" variant="outline">Back to Blog Posts</flux:button>
     </div>
   </form>
