@@ -4,6 +4,7 @@ namespace App\Data;
 
 use App\Models\Post;
 use DateTime;
+use Illuminate\Support\Facades\Date;
 use Livewire\Attributes\Computed;
 use Spatie\LaravelData\Data;
 
@@ -21,6 +22,7 @@ class PostData extends Data
     public string $body,
     public int $likes,
     public DateTime $created_at,
+    public ?DateTime $published_at,
   ) {
   }
 
@@ -36,7 +38,8 @@ class PostData extends Data
       status: $post->status,
       body: $post->body,
       likes: $post->likes,
-      created_at: $post->created_at
+      created_at: $post->created_at,
+      published_at: new DateTime($post->published_at)
     );
   }
 }

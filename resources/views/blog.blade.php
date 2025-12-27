@@ -15,29 +15,27 @@
       </ul>
     </aside>
     <section class="md:col-span-2 divide-y divide-primary/20">
-      @for ($i = 0; $i < 10; $i++)
-        <a href="/blog/testing" class="block py-8 px-2 md:px-4 cursor-pointer hover:bg-primary/10">
+      @foreach ($posts as $post)
+        <a href="/blog/testing" wire:key="{{ $post->slug }}"
+          class="block py-8 px-2 md:px-4 cursor-pointer hover:bg-primary/10">
           <div class="flex flex-col md:flex-row gap-4 items-center">
-            <img src="{{ asset('img/profile.jpg') }}" alt="Post title"
-              class="h-28 object-cover w-full md:w-28 rounded-md">
+            {{-- TODO: Will have the cover image later --}}
+            {{-- <img src="{{ asset('img/profile.jpg') }}" alt="Post title"
+              class="h-28 object-cover w-full md:w-28 rounded-md"> --}}
             <article class="space-y-4 py-2">
               <div class="flex flex-col md:flex-row md:items-center md:gap-4">
-                <div class="tracking-wider">Category 1</div>
+                <div class="tracking-wider">{{ $post->category }}</div>
                 <div class="hidden md:block w-30 h-[1px] bg-primary/50"></div>
-                <div class="text-sm">10 Dec 2025</div>
+                <div class="text-sm">{{ $post->published_at->format('d M Y') }}</div>
               </div>
               <h2 class="font-semibold">
-                {{ Str::of(
-                    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, autem esse libero fuga quaerat laborum?',
-                )->limit(50) }}
+                {{ Str::of($post->title)->limit(50) }}
               </h2>
             </article>
           </div>
-          <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem nihil quas deserunt
-            pariatur minima
-            assumenda, ducimus adipisci sint laudantium error.</p>
+          <p class="mt-4">{{ $post->description }}</p>
         </a>
-      @endfor
+      @endforeach
     </section>
   </div>
 </div>
