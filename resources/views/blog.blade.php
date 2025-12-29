@@ -18,10 +18,8 @@
       @foreach ($posts as $post)
         <a href="/blog/{{ $post->slug }}" wire:key="{{ $post->slug }}"
           class="block py-8 px-2 md:px-4 cursor-pointer hover:bg-primary/10">
-          <div class="flex flex-col md:flex-row gap-4 items-center">
+          <div class="flex flex-col md:flex-row gap-4">
             {{-- TODO: Will have the cover image later --}}
-            {{-- <img src="{{ asset('img/profile.jpg') }}" alt="Post title"
-              class="h-28 object-cover w-full md:w-28 rounded-md"> --}}
             <article class="space-y-4 py-2">
               <div class="flex flex-col md:flex-row md:items-center md:gap-4">
                 <div class="tracking-wider">{{ $post->category }}</div>
@@ -37,5 +35,8 @@
         </a>
       @endforeach
     </section>
+    <div class="md:col-span-2 md:col-end-4">
+      {{ $posts->links() }}
+    </div>
   </div>
 </div>
