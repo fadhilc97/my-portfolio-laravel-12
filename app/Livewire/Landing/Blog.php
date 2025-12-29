@@ -35,7 +35,7 @@ class Blog extends Component
     }
 
     $posts_query->where('status', 'published')->latest();
-    $posts = PostData::collect($posts_query->paginate(2)->withQueryString());
+    $posts = PostData::collect($posts_query->paginate(10));
 
     return view('blog', compact('posts'));
   }
