@@ -7,15 +7,19 @@
     <aside class="space-y-4">
       <h4 class="font-medium">Category Filters:</h4>
       <ul>
-        <li class="flex items-center mb-4">
-          <input checked id="category-1" type="checkbox" value=""
-            class="w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft cursor-pointer">
-          <label for="category-1" class="ms-2 font-medium text-heading select-none cursor-pointer">Category 1</label>
-        </li>
+        @foreach (App\Models\Category::all() as $category)
+          <li wire:key="{{ $category->id }}" class="flex items-center mb-4">
+            <input wire:model.live.debounce.200ms="selected_categories" id="category-{{ $category->id }}" type="checkbox"
+              value="{{ $category->id }}"
+              class="w-4 h-4 border border-default-medium rounded-xs bg-neutral-secondary-medium focus:ring-2 focus:ring-brand-soft cursor-pointer">
+            <label for="category-{{ $category->id }}"
+              class="ms-2 font-medium text-heading select-none cursor-pointer">{{ $category->name }}</label>
+          </li>
+        @endforeach
       </ul>
     </aside>
     <section class="md:col-span-2 divide-y divide-primary/20">
-      @foreach ($posts as $post)
+      @forelse ($posts as $post)
         <a href="/blog/{{ $post->slug }}" wire:key="{{ $post->slug }}"
           class="block py-8 px-2 md:px-4 cursor-pointer hover:bg-primary/10">
           <div class="flex flex-col md:flex-row gap-4">
@@ -33,7 +37,9 @@
           </div>
           <p class="mt-4">{{ $post->description }}</p>
         </a>
-      @endforeach
+      @empty
+        <p class="text-lg font-semibold text-center">Posts not exist</p>
+      @endforelse
     </section>
     <div class="md:col-span-2 md:col-end-4">
       {{ $posts->links() }}

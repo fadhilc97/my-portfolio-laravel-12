@@ -13,10 +13,29 @@ class Blog extends Component
 {
   use WithPagination;
 
+  public $query_string = [
+    'selected_categories' => ['except', []]
+  ];
+
+  public array $selected_categories = [];
+
+  public function updatingSelectedCategories()
+  {
+    $this->resetPage();
+  }
+
   public function render()
   {
-    $postsQuery = Post::where('status', 'published')->latest()->paginate(2);
-    $posts = PostData::collect($postsQuery);
+    $posts = PostData::collect([]);
+
+    $posts_query = Post::query();
+
+    if ($this->selected_categories) {
+      $posts_query->whereIn('category_id', $this->selected_categories);
+    }
+
+    $posts_query->where('status', 'published')->latest();
+    $posts = PostData::collect($posts_query->paginate(2)->withQueryString());
 
     return view('blog', compact('posts'));
   }
