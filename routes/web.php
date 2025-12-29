@@ -13,6 +13,7 @@ use App\Livewire\BlogPost\Category;
 use App\Livewire\BlogPost\CreateBlog;
 use App\Livewire\BlogPost\EditBlog;
 use App\Livewire\BlogPost\PreviewBlog;
+use App\Livewire\Landing\BlogDetail;
 
 Route::get('/', function() {
   return view ('home');
@@ -22,9 +23,7 @@ Route::get('/experience', function() {
 });
 Route::get('/project', Project::class);
 Route::get('/blog', Blog::class);
-Route::get('/blog/{slug}', function() {
-  return view('blog-detail');
-});
+Route::get('/blog/{post:slug}', BlogDetail::class);
 
 Route::view('dashboard', 'dashboard')
   ->middleware(['auth', 'verified'])

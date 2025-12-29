@@ -16,7 +16,7 @@
     </aside>
     <section class="md:col-span-2 divide-y divide-primary/20">
       @foreach ($posts as $post)
-        <a href="/blog/testing" wire:key="{{ $post->slug }}"
+        <a href="/blog/{{ $post->slug }}" wire:key="{{ $post->slug }}"
           class="block py-8 px-2 md:px-4 cursor-pointer hover:bg-primary/10">
           <div class="flex flex-col md:flex-row gap-4 items-center">
             {{-- TODO: Will have the cover image later --}}

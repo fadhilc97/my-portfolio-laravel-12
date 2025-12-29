@@ -8,11 +8,13 @@
     <flux:field>
       <flux:label badge="Required">Title</flux:label>
       <flux:input wire:model="title" type="text" />
+      <flux:error name="title" />
     </flux:field>
 
     <flux:field>
       <flux:label badge="Optional">Description</flux:label>
       <flux:textarea wire:model="description" rows="4" />
+      <flux:error name="description" />
     </flux:field>
 
     <flux:field>
@@ -22,6 +24,7 @@
           <flux:select.option value="{{ $category->id }}">{{ $category->name }}</flux:select.option>
         @endforeach
       </flux:select>
+      <flux:error name="category_id" />
     </flux:field>
 
     <flux:field>
@@ -37,6 +40,7 @@
           });"></div>
         </div>
       </div>
+      <flux:error name="body" />
     </flux:field>
     <div class="flex gap-1">
       <flux:button type="submit" variant="primary" class="cursor-pointer">Save</flux:button>
