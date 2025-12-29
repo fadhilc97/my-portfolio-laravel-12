@@ -3,7 +3,8 @@
     <h1>Blog page</h1>
     <h3>Pouring out my thoughts into series of words</h3>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 mt-16 gap-4">
+  <a href="/" class="font-medium text-lg mt-8 inline-block text-sky-600">&laquo; Back to home</a>
+  <div class="grid grid-cols-1 md:grid-cols-3 mt-8 gap-4">
     <aside class="space-y-4">
       <h4 class="font-medium">Category Filters:</h4>
       <ul>
