@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title', 50);
-            $table->string('slug', 50);
+            $table->string('slug', 50)->unique();
             $table->string('description', 150)->nullable();
             $table->text('body');
             $table->integer('likes')->default(0);
