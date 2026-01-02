@@ -1,3 +1,8 @@
+@props([
+    'withLikesCount' => false,
+    'href' => '#',
+])
+
 <div class="w-full md:w-3/4 bg-white mx-auto">
   {{-- Header: Back to Post Link, Title, Description, Metadata --}}
   {{-- {{ dd($this->post) }} --}}
@@ -31,14 +36,16 @@
     {!! $this->body !!}
   </section>
   {{-- Footer --}}
-  <section class="px-8 md:px-32 py-12 space-y-8 md:space-y-12 text-center">
-    <p class="text-lg md:text-xl text-primary/70">How much did you like this article?</p>
-    <div class="space-y-2">
-      <p class="text-lg md:text-xl text-tertiary font-medium">100</p>
-      <button type="button"
-        class="p-3 rounded-full border border-tertiary cursor-pointer transition hover:border-[1.5px] hover:scale-105">
-        <img src="{{ asset('img/icons/clap.svg') }}" width="30" />
-      </button>
-    </div>
-  </section>
+  @if ($withLikesCount)
+    <section class="px-8 md:px-32 py-12 space-y-8 md:space-y-12 text-center">
+      <p class="text-lg md:text-xl text-primary/70">How much did you like this article?</p>
+      <div class="space-y-2">
+        <p class="text-lg md:text-xl text-tertiary font-medium">100</p>
+        <button type="button"
+          class="p-3 rounded-full border border-tertiary cursor-pointer transition hover:border-[1.5px] hover:scale-105">
+          <img src="{{ asset('img/icons/clap.svg') }}" width="30" />
+        </button>
+      </div>
+    </section>
+  @endif
 </div>
