@@ -1,4 +1,4 @@
-<div class="w-full md:w-3/4 bg-white mx-auto">
+<div class="w-full md:w-3/4 bg-white mx-auto" x-data="{ likes: $wire.entangle('likes') }">
   <section class="space-y-8 md:space-y-12 bg-primary px-8 md:px-32 py-12">
     <a href="/blog" class="inline-block text-xl md:text-2xl text-tertiary font-medium">&lt; <span class="ml-4">Back
         to
@@ -28,9 +28,10 @@
   <section class="px-8 md:px-32 py-12 space-y-8 md:space-y-12 text-center">
     <p class="text-lg md:text-xl text-primary/70">How much did you like this article?</p>
     <div class="space-y-2">
-      <p class="text-lg md:text-xl text-tertiary font-medium">100</p>
+      <p class="text-lg md:text-xl text-tertiary font-medium" x-text="likes"></p>
       <button type="button"
-        class="p-3 rounded-full border border-tertiary cursor-pointer transition hover:border-[1.5px] hover:scale-105">
+        class="p-3 rounded-full border border-tertiary cursor-pointer transition hover:border-[1.5px] hover:scale-105"
+        @click="likes++" wire:click.debounce.300ms="handleSetLikes()">
         <img src="{{ asset('img/icons/clap.svg') }}" width="30" />
       </button>
     </div>

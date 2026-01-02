@@ -11,22 +11,36 @@ use Livewire\Attributes\Layout;
 #[Layout('components.layouts.blog')]
 class BlogDetail extends Component
 {
-  protected Post $post;
+  public string $slug;
+  public int $likes = 0;
 
-  public function mount(Post $post) {
-    $this->post = $post;
+  public function mount(Post $post)
+  {
+    $this->slug = $post->slug;
+    $this->likes = $post->likes;
+  }
+
+  public function handleSetLikes()
+  {
+    $post = Post::where('slug', $this->slug)->firstOrFail();
+    $post->likes = $this->likes;
+    $post->save();
+    // Optionally, refresh likes from DB to avoid race conditions
+    $this->likes = $post->likes;
   }
 
   #[Computed()]
   public function postData(): PostData
   {
-    return PostData::fromModel($this->post);
+    $post = Post::where('slug', $this->slug)->firstOrFail();
+    return PostData::fromModel($post);
   }
 
   public function render()
   {
     return view('blog-detail', [
-      'post' => $this->postData()
+      'likes' => $this->likes,
+      'post' => $this->postData(),
     ]);
   }
 }
