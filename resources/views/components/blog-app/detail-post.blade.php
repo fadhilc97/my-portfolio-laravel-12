@@ -23,11 +23,11 @@
       </div>
       <div class="py-5 flex justify-between items-center text-quatenary/70">
         <div>Author</div>
-        <div class="text-sm text-quatenary/60">Fadhil</div>
+        <div class="text-sm text-quatenary/60">{{ $this->author }}</div>
       </div>
       <div class="py-5 flex justify-between items-center text-quatenary/70">
         <div>Category</div>
-        <div class="text-sm text-quatenary/60">Carrer</div>
+        <div class="text-sm text-quatenary/60">{{ $this->category }}</div>
       </div>
     </div>
   </section>
