@@ -8,7 +8,7 @@
     <aside class="space-y-4">
       <h4 class="font-medium">Category Filters:</h4>
       <ul>
-        @foreach (App\Models\Category::all() as $category)
+        @forelse (App\Models\Category::all() as $category)
           <li wire:key="{{ $category->id }}" class="flex items-center mb-4">
             <input wire:model.live.debounce.200ms="selected_categories" id="category-{{ $category->id }}" type="checkbox"
               value="{{ $category->id }}"
@@ -16,7 +16,9 @@
             <label for="category-{{ $category->id }}"
               class="ms-2 font-medium text-heading select-none cursor-pointer">{{ $category->name }}</label>
           </li>
-        @endforeach
+        @empty
+          <p class="text-lg font-semibold text-secondary/50">Categories will available soon</p>
+        @endforelse
       </ul>
     </aside>
     <section class="md:col-span-2 divide-y divide-primary/20">
@@ -39,7 +41,7 @@
           <p class="mt-4">{{ $post->description }}</p>
         </a>
       @empty
-        <p class="text-lg font-semibold text-center">Posts not exist</p>
+        <p class="text-lg font-semibold text-center text-secondary/50">Posts will available soon</p>
       @endforelse
     </section>
     <div class="md:col-span-2 md:col-end-4">
