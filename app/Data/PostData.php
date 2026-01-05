@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Data;
 
 use App\Models\Post;
@@ -15,8 +14,8 @@ class PostData extends Data
     public string $slug,
     public string $title,
     public string $description,
-    public string $category,
-    public string $category_id,
+    public ?string $category,
+    public ?int $category_id,
     public string $author,
     public string $status,
     public string $body,
@@ -32,8 +31,8 @@ class PostData extends Data
       slug: $post->slug,
       title: $post->title,
       description: $post->description,
-      category: $post->category->name,
-      category_id: $post->category->id,
+      category: $post->category->name ?? '-',
+      category_id: $post->category->id ?? 0,
       author: $post->author->name,
       status: $post->status,
       body: $post->body,
