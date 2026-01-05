@@ -30,6 +30,8 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
+        abort_if($input['email'] !== env('APP_OWNER_EMAIL', ''), 403, 'Only the website owner can manage this application');
+
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
