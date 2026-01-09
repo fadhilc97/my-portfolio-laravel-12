@@ -19,6 +19,7 @@
       <x-landing.nav-link-item href="/experience" label="Experience" />
       <x-landing.nav-link-item href="/project" label="Project" />
       <x-landing.nav-link-item href="/blog" label="Blog" />
+      <x-landing.nav-link-item href="/donate" label="Donate" />
     </ul>
   </nav>
 </aside>

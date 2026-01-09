@@ -24,6 +24,9 @@ Route::get('/experience', function() {
 Route::get('/project', Project::class);
 Route::get('/blog', Blog::class);
 Route::get('/blog/{post:slug}', BlogDetail::class);
+Route::get('/donate', function() {
+  return view('donate');
+});
 
 Route::view('dashboard', 'dashboard')
   ->middleware(['auth', 'verified'])
