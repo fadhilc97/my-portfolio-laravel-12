@@ -31,20 +31,26 @@
       },
       projects: [{
         id: 1,
+        imgPath: 'img/projects/blog-management-system.png',
+        title: 'Blog Management System',
+        description: 'Manage and share my ideas into the blog posts for this website.',
+        techStacks: ['Laravel 12', 'Livewire', 'Tailwind CSS', 'SQLite'],
+      }, {
+        id: 2,
         imgPath: 'img/projects/daily-savings.png',
         title: 'Daily Savings',
         description: 'Recording and summarize my savings in daily basis.',
         techStacks: ['TypeScript', 'Next.js', 'Tailwind CSS', 'PostgreSQL', 'Prisma.js', 'Recharts'],
         link: 'https://www.linkedin.com/feed/update/urn:li:activity:7226029158135386112/'
       }, {
-        id: 2,
+        id: 3,
         imgPath: 'img/projects/technical-docs.png',
         title: 'Technical Docs',
         description: 'Simple technical documentation about JavaScript Fundamentals.',
         techStacks: ['HTML', 'CSS'],
         link: 'https://fadhilc97.github.io/fcc-technical-documentation/'
       }, {
-        id: 3,
+        id: 4,
         imgPath: 'img/projects/valorant-info.png',
         title: 'Valorant Info - Asia Pacific 2022',
         description: 'Introduction about game Valorant in general and tournament information in Asia Pacific 2022. This site is written in Bahasa Indonesia.',
@@ -75,7 +81,7 @@
       <p class="text-quatenary/90 text-center mt-4 text-sm" x-text="projects[currentSlide].description"></p>
       <p class="text-quatenary/70 text-center text-sm mt-1">Tech stacks: <span
           x-text="projects[currentSlide].techStacks.join(', ')"></span></p>
-      <div class="flex justify-center mt-4">
+      <div x-show="projects[currentSlide].link" class="flex justify-center mt-4">
         <a :href="projects[currentSlide].link" target="_blank"
           class="border rounded-lg px-4 py-2 text-sm text-center border-quatenary/80 hover:bg-quatenary hover:text-primary font-medium transition duration-300">Link
           Demo</a>
