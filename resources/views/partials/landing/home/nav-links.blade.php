@@ -1,4 +1,4 @@
-<aside x-bind:class="!isOpenHamburger ? 'hidden' : ''"
+<aside x-bind:class="{ 'hidden': !isOpenHamburger }"
   class="w-full absolute right-0 bg-primary md:static md:w-1/5 space-y-16 md:block">
   <nav class="px-3 md:block flex justify-between items-center">
     <ul class="flex justify-start md:justify-end gap-4 items-center">

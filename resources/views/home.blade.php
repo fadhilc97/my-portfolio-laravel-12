@@ -4,4 +4,6 @@
     @include('partials.landing.home.nav-links')
     @include('partials.landing.home.profile-picture')
   </div>
+
+  @livewireScripts
 </x-layouts.landing>
