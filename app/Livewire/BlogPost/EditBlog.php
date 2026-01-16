@@ -27,7 +27,7 @@ class EditBlog extends Component
 
     $this->title = $postData->title;
     $this->description = $postData->description;
-    $this->category_id = $postData->category_id;
+    $this->category_id = $postData->category_id ?: '';
     $this->body = $postData->body;
     $this->slug = $slug;
     $this->status = $postData->status;
@@ -37,8 +37,11 @@ class EditBlog extends Component
     $validated = $this->validate([
       'title' => 'required|min:3|max:50|unique:posts,title'.$this->slug,
       'description' => 'required|min:3|max:500',
-      'category_id' => 'required|integer',
+      'category_id' => 'required|integer|min:1',
       'body' =>  'required'
+    ], [
+      '*.required' => "Required",
+      'category_id.min' => "Please choose category"
     ]);
 
     Post::where('slug', $this->slug)->update($validated);
