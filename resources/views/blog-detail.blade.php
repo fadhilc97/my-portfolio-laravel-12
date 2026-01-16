@@ -23,6 +23,7 @@
     </div>
   </section>
   <section class="px-8 md:px-32 py-12">
+    <img src="{{ $post->cover_url }}" alt="{{ $post->title }}" class="h-64 mx-auto w-full object-cover mb-8" />
     {!! $post->body !!}
   </section>
   <section class="px-8 md:px-32 py-12 space-y-8 md:space-y-12 text-center">

@@ -3,8 +3,6 @@ namespace App\Data;
 
 use App\Models\Post;
 use DateTime;
-use Illuminate\Support\Facades\Date;
-use Livewire\Attributes\Computed;
 use Spatie\LaravelData\Data;
 
 class PostData extends Data
@@ -22,6 +20,7 @@ class PostData extends Data
     public int $likes,
     public DateTime $created_at,
     public ?DateTime $published_at,
+    public ?string $cover_url = ''
   ) {
   }
 
@@ -38,7 +37,8 @@ class PostData extends Data
       body: $post->body,
       likes: $post->likes,
       created_at: $post->created_at,
-      published_at: new DateTime($post->published_at)
+      published_at: new DateTime($post->published_at),
+      cover_url: $post->getFirstMediaUrl('default') ?: asset('img/default-cover.jpg')
     );
   }
 }
