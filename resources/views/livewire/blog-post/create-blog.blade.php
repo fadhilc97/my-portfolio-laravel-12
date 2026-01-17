@@ -30,7 +30,7 @@
 
     <flux:field>
       <flux:label badge="Required">Cover Image</flux:label>
-      <x-filepond::upload wire:model="cover_image_file" />
+      <x-filepond::upload wire:model="cover_image_file" accepted-file-types="image/*" />
       <flux:error name="cover_image_file" />
     </flux:field>
 
