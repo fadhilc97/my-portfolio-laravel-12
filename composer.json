@@ -16,7 +16,8 @@
         "livewire/flux": "^2.1.1",
         "livewire/volt": "^1.7.0",
         "spatie/laravel-data": "^4.18",
-        "spatie/laravel-medialibrary": "^11.17"
+        "spatie/laravel-medialibrary": "^11.17",
+        "spatie/livewire-filepond": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.16",
