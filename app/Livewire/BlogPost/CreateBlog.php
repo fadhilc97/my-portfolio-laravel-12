@@ -34,10 +34,13 @@ class CreateBlog extends Component
     $validated['author_id'] = Auth::user()->id;
     
     $created_post = Post::create($validated);
-    $created_post
-      ->addMedia($this->cover_image_file->getRealPath())
-      ->usingFileName($this->cover_image_file->getClientOriginalName())
-      ->toMediaCollection('cover');
+
+    if ($this->cover_image_file) {
+      $created_post
+        ->addMedia($this->cover_image_file->getRealPath())
+        ->usingFileName($this->cover_image_file->getClientOriginalName())
+        ->toMediaCollection('cover');
+    }
 
     return redirect('/app/blog');
   }
