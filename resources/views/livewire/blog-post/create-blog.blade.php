@@ -1,5 +1,6 @@
 @assets
   <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+  @filepondScripts
 @endassets
 
 <div class="space-y-8">
@@ -25,6 +26,12 @@
         @endforeach
       </flux:select>
       <flux:error name="category_id" />
+    </flux:field>
+
+    <flux:field>
+      <flux:label badge="Required">Cover Image</flux:label>
+      <x-filepond::upload wire:model="cover_image_file" />
+      <flux:error name="cover_image_file" />
     </flux:field>
 
     <flux:field>
