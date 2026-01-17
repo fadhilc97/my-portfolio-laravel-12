@@ -38,7 +38,7 @@ class PostData extends Data
       likes: $post->likes,
       created_at: $post->created_at,
       published_at: new DateTime($post->published_at),
-      cover_url: $post->getFirstMediaUrl('default') ?: asset('img/default-cover.jpg')
+      cover_url: $post->getFirstMediaUrl('cover') ?: asset('img/default-cover.jpg')
     );
   }
 }
