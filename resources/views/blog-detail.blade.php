@@ -37,6 +37,11 @@
           <div class="space-y-4 md:space-y-6 py-4 md:py-6">
             <img src="{{ $post->cover_url }}" alt="{{ $post->title }}" class="w-full" />
           </div>
+          {{-- Modal footer --}}
+          <div class="flex justify-center space-x-4 pt-4">
+            <button data-modal-hide="post-cover-image" type="button"
+              class="py-2 px-4 hover:text-secondary hover:bg-quatenary transition duration-300 inline-block font-inter text-primary/70 mt-4 border border-primary/70 cursor-pointer">Close</button>
+          </div>
         </div>
       </div>
     </div>
