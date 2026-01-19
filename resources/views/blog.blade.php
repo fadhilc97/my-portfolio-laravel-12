@@ -25,7 +25,7 @@
       @forelse ($posts as $post)
         <a href="/blog/{{ $post->slug }}" wire:key="{{ $post->slug }}"
           class="block py-8 px-2 md:px-4 cursor-pointer hover:bg-primary/10">
-          <img src="{{ $post->cover_url }}" alt="{{ $post->title }}" class="h-40 w-full object-cover" />
+          <img src="{{ $post->cover_url }}" alt="{{ $post->title }}" class="h-52 w-full object-cover" />
           <div class="flex flex-col md:flex-row gap-4">
             <article class="space-y-4 py-2">
               <div class="flex flex-col md:flex-row md:items-center md:gap-4">

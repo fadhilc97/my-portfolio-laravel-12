@@ -23,7 +23,24 @@
     </div>
   </section>
   <section class="px-8 md:px-32 py-12">
-    <img src="{{ $post->cover_url }}" alt="{{ $post->title }}" class="h-40 mx-auto w-full object-cover mb-8" />
+    <img src="{{ $post->cover_url }}" alt="{{ $post->title }}"
+      class="h-40 mx-auto w-full object-cover mb-8 cursor-pointer" data-modal-target="post-cover-image"
+      data-modal-toggle="post-cover-image" />
+
+    <!-- Main modal -->
+    <div id="post-cover-image" tabindex="-1" aria-hidden="true"
+      class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-neutral-primary-soft border border-default rounded-base shadow-sm p-4 md:p-6">
+          <!-- Modal body -->
+          <div class="space-y-4 md:space-y-6 py-4 md:py-6">
+            <img src="{{ $post->cover_url }}" alt="{{ $post->title }}" class="w-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+    {{-- TODO: Show image using modal from Flowbite --}}
     {!! $post->body !!}
   </section>
   <section class="px-8 md:px-32 py-12 space-y-8 md:space-y-12 text-center">
