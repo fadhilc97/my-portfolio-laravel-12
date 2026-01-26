@@ -6,8 +6,10 @@
           'start_period' => 'November 2024',
           'end_period' => 'Present',
           'descriptions' => [
-              'Successful released on Readiness Index, the super-app from all indexes.',
-              'Analyze and implement the new or existing features that fit the requirements.',
+              'Designed and implemented backend APIs using NestJS based on business and product requirements.',
+              'Led the integration of payment and invoicing systems using Stripe, Google Pay, Apple Pay, and Xero to support end-to-end billing workflows.',
+              'Integrated cloud storage services (AWS S3 and GCP Storage) for secure and scalable file management.',
+              'Collaborated asynchronously with cross-functional teams to improve system reliability, scalability, and smooth feature delivery.',
           ],
       ],
       [
@@ -16,20 +18,8 @@
           'start_period' => 'November 2022',
           'end_period' => 'November 2024',
           'descriptions' => [
-              'Successful release on COSIRI, the the sustainability index assessment.',
-              'Implement the UI components and pages designs with UX friendly.',
-              'REST API integration to execute the function optimally.',
-          ],
-      ],
-      [
-          'role' => 'Freelance Math Tutor',
-          'company_name' => 'Baraya Edukasi (Batam, Indonesia)',
-          'start_period' => 'October 2022',
-          'end_period' => 'February 2024',
-          'descriptions' => [
-              'Assist the student learning material difficulties.',
-              'Prepare teaching materials based on student needs with understandable concepts.',
-              'Prepare the mid/final regular school examination materials.',
+              'Implemented responsive and user-friendly UI based on design specifications and user feedback.',
+              'Collaborated closely with backend engineers to integrate APIs and ensure consistent data flow between frontend and backend systems.',
           ],
       ],
       [
@@ -38,9 +28,10 @@
           'start_period' => 'February 2020',
           'end_period' => 'August 2022',
           'descriptions' => [
-              'Successfull to roll-out on CIMS (Client Information Management System) project for school organization after supporting for 2 phases.',
-              'Project support on DMS (Donation Management System) for social organization.',
-              'Create secured auto-backup database and file objects in production server.',
+              'Developed and extended core features (Inventory, Students, Session, Admission, etc.) in an ERP system used in production environments.',
+              'Prepared and executed data migration processes prior to production deployment.',
+              'Set up deployment infrastructure on AWS EC2 and implemented automated database and file backups using cron jobs and shell scripts.',
+              'Took responsibility for system stability and operational readiness in live environments.',
           ],
       ],
       [
@@ -49,17 +40,7 @@
           'start_period' => 'August 2019',
           'end_period' => 'December 2019',
           'descriptions' => [
-              'Teaching the Web and Mobile Programming subject for grade 12 vocational high school (except Thursday).',
-              'as a participant companion to participate the "LKS 2019" (student skill competition) Web and Technology competition Riau Island Province level for school representative.',
-          ],
-      ],
-      [
-          'role' => 'ICT Teacher',
-          'company_name' => 'Sekolah Kallista (Batam, Indonesia)',
-          'start_period' => 'July 2019',
-          'end_period' => 'December 2019',
-          'descriptions' => [
-              'Creating curriculum and teaching for grade 9 collaborated with PT. Multi Kreasi Sinergia (Ruang Kreasi) every Thursday.',
+              'Delivered teaching materials and assessments for Web and Mobile Development subjects, focusing on programming fundamentals and practical skills.',
           ],
       ],
       [
@@ -68,11 +49,9 @@
           'start_period' => 'July 2018',
           'end_period' => 'March 2019',
           'descriptions' => [
-              'Manage the "Madebyme" makerspace to manage the workshop.',
-              'Arrange and teaching coding for kids program as instructor.',
-              'Explore and prototype the IoT.',
-              'IT Support for several staffs.',
-              'Help for organize and attend the event that collaborated with startups, communities, schools, colleges, and industries.',
+              'Assisted in operating a makerspace and conducting technical workshops, developing hands-on problem-solving and ownership skills.',
+              'Taught basic programming in a Coding for Kids program, strengthening communication and concept simplification abilities.',
+              'Built early robotics and IoT prototypes, gaining exposure to system thinking and iterative prototyping.',
           ],
       ],
   ];
