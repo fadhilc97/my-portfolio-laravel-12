@@ -13,5 +13,5 @@
 
   <a href="{{ asset('cv.pdf') }}" target="_blank"
     class="py-2 px-4 hover:text-primary hover:bg-quatenary transition duration-300 inline-block font-inter text-quatenary/70 mt-4 border border-quatenary/70 cursor-pointer">Download
-    CV</a>
+    Resume</a>
 </div>
